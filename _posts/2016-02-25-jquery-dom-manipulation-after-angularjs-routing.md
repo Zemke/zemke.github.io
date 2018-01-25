@@ -44,5 +44,3 @@ And this is how it’s bound to the HTML element:
 ```
 
 Easy enough. `$http.get()` will fetch something from your back-end asynchronously hence we use `$scope.$watch` to look out for changes on this data. `$(element).slick()` is the actual DOM manipulation that will be triggered once `$scope.awesomeQuotes` has changed. By the way, [Slick](http://kenwheeler.github.io/slick/) is an awesome tool for making nice carousels.
-
-I hope I was able to describe the problem accurately, if not you may just comment and I will reply. Thanks for reading!
