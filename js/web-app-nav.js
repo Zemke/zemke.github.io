@@ -1,8 +1,5 @@
 function onLoad() {
-    console.log('Hello, World! 2');
-
     document.addEventListener('click', function (event) {
-
 
         var isAppleStandalone = !!(window.navigator && window.navigator.standalone);
         var isStandalone = window.matchMedia('(display-mode: standalone)').matches;
