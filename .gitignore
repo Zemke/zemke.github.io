@@ -7,4 +7,5 @@ _site
 _config.gh-pages.yml
 
 Gemfile.lock
+vendor/
 .idea/

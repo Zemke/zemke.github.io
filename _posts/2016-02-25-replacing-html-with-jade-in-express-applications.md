@@ -1,12 +1,11 @@
 ---
 layout:     post
 title:      Replacing HTML with Jade in Express applications
-date:       2016-02-25 06:00:06
 summary:    Jade is great. You can progress faster and that of course is valuable. So, here is how you can make your Express application one that utilizes the strengths of Jade.
 categories: jade express
 ---
 
-Jade is great. You can progress faster and that of course is valuable. So, here is how you can make your Express application one that utilizes the strengths of Jade.
+{{page.summary}}
 
 Add Jade to your project.
 

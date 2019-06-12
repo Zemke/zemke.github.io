@@ -1,0 +1,15 @@
+<h1>Services</h1>
+
+<div class="service-container">
+    {% for item in site.data.services %}
+    <div class="service">
+        <div class="service-icon-container">
+            <div class="service-icon-circle">
+                <i class="fa fa-{{item.fa}}"></i>
+            </div>
+        </div>
+        <h3>{{item.title}}</h3>
+        <p>{{item.content}}</p>
+    </div>
+    {% endfor %}
+</div>

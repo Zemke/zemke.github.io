@@ -1,12 +1,11 @@
 ---
 layout:     post
 title:      AngularJS $resource Population
-date:       2016-02-25 06:00:05
-summary:    A profile entity might have a userId attribute. Let’s say you fetch a profile and don’t only want the id of the user the profile belongs to, but the whole user object. How would you populate it neatly? That’s what I came up with
-categories: angular
+summary:    A `profile` entity might have a `userId` attribute. Let’s say you fetch a profile and don’t only want the id of the user the profile belongs to, but the whole user object. How would you populate it neatly? That’s what I came up with.
+categories: angularjs
 ---
 
-A `profile` entity might have a `userId` attribute. Let’s say you fetch a profile and don’t only want the id of the user the profile belongs to, but the whole user object. How would you populate it neatly? That’s what I came up with:
+{{page.summary}}
 
 ```js
 angular.module('app')

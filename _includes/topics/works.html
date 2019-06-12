@@ -1,0 +1,21 @@
+<h1>
+    Works
+</h1>
+
+
+<div class="works-container">
+    {% for item in site.data.works %}
+    <div class="work" id="work-{{item.id}}" onclick="openOverlay(this)">
+        <h3>
+            {{item.label}}
+        </h3>
+    </div>
+    <div class="work-description" id="work-{{item.id}}-overlay">
+        <div class="text">
+            <i class="fa fa-5x fa-times" onclick="closeOverlay(this)"></i>
+            <h3>{{item.label}}</h3>
+            {{item.description}}
+        </div>
+    </div>
+    {% endfor %}
+</div>

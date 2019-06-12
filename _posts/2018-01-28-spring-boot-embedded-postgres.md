@@ -1,14 +1,13 @@
 ---
 layout:     post
 title:      Spring Boot Embedded Postgres
-date:       2018-01-28 21:27:13
 summary:    You probably won’t use Spring Boot’s default in-memory H2 database in production. You might use Postgres, though. Also, you see the benefit of using the same database in production, development and when unit testing. Here is how to configure an embedded Postgres for your local environment that just starts along with your Spring Boot application.
 categories: spring-boot postgres
 ---
 
-You probably won’t use Spring Boot’s default in-memory H2 database in production. You might use Postgres, though. Also, you see the benefit of using the same database in production, development and when unit testing. Here is how to configure an embedded Postgres for your local environment that just starts along with your Spring Boot application.
+{{page.summary}}
 
-## Dependencies
+# Dependencies
 
 You’ll depend on those:
 
@@ -37,7 +36,7 @@ Since we’re going to create some custom configuration properties, you’ll als
 
 If the H2 dependency is still in your POM, you can remove it. 👍
 
-## Configuration
+# Configuration
 
 Your database connection can be configured in your `application.properties`.
 
@@ -71,7 +70,7 @@ We’ve set `@Profile("default")` since you probably don’t want to use an embe
 
 `@Primary` is set so that our `EmbeddedDataSourceProperties` take precedence over Spring Boot’s `DataSourceProperties`.
 
-## Data source implementation
+# Data source implementation
 
 Right now Spring Boot would try to connect to the data source specified in `application.properties`. Obviously this data source is not available. Our goal is to free ourselves from the hassle to not only start our Spring Boot application but also a Postgres database.
 
@@ -107,6 +106,6 @@ public class DefaultDataSourceConfig {
 
 The properties we’ve set previously are used to create the embedded database and connect to it.
 
-## Troubleshooting
+# Troubleshooting
 
 On macOS—possibly others—you might encounter an issue regarding shared memory allocation (`shmget`). You’ll find help [here](https://benscheirman.com/2011/04/increasing-shared-memory-for-postgres-on-os-x/).

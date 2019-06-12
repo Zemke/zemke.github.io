@@ -1,12 +1,11 @@
 ---
 layout:     post
 title:      jQuery DOM Manipulation after AngularJS Routing
-date:       2016-02-25 06:00:02
 summary:    You want to manipulate the DOM with jQuery on a new partial AngularJS is rendering? That’s not so easily done as you have to manipulate after the routing. With this pro tip I’ll show you how that works.
-categories: angular
+categories: angularjs
 ---
 
-You want to manipulate the DOM with jQuery on a new partial AngularJS is rendering? That’s not so easily done as you have to manipulate after the routing. With this pro tip I’ll show you how that works.
+{{page.summary}}
 
 The answer is: Directives.
 

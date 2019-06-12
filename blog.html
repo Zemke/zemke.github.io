@@ -1,0 +1,18 @@
+---
+layout: default
+title: Zemke — Blog
+---
+
+<div class="container">
+    <h1 class="head">Blog</h1>
+
+    <div class="blog">
+        {% for post in site.posts %}
+        <p class="time">{{post.date | date: "%b %-d, %Y"}}</p>
+        <h2 class="blog-title">
+            <a href="{{post.url}}">{{post.title}}</a>
+        </h2>
+        {{post.excerpt}}
+        {% endfor %}
+    </div>
+</div>

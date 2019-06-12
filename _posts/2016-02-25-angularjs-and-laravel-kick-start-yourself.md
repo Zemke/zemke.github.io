@@ -1,16 +1,15 @@
 ---
 layout:     post
 title:      AngularJS and Laravel — Kick-Start Yourself!
-date:       2016-02-25 06:00:04
 summary:    Kick-start yourself for a Single Page Application featuring the modern Laravel PHP framework and Google’s acclaimed front-end framework AngularJS. Just download and install and you have a good foundation for building any application.
-categories: angular php
+categories: angularjs php
 ---
 
-Kick-start yourself for a Single Page Application featuring the modern Laravel PHP framework and Google’s acclaimed front-end framework AngularJS. Just download and install and you have a good foundation for building any application.
+{{page.summary}}
 
 https://github.com/Zemke/starter-laravel-angular.git
 
-## Features!
+# Features!
 
 - Single Page Application
   - HTML5 mode URLs
@@ -18,7 +17,7 @@ https://github.com/Zemke/starter-laravel-angular.git
     - You kind of don’t need to care about routes, they work automatically as you add new views. Still allows for flexibility if you plan any special routes.
 - Authentication!
   - Flexible, extensible, clean
-  - Token-based (![tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth))
+  - Token-based ([tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth))
   - Persistent local storage
 - Larevel Elixir readily configured
   - Versioning of CSS and JS files (cache busting)
@@ -27,7 +26,7 @@ https://github.com/Zemke/starter-laravel-angular.git
 - Comes with Bootstrap and AngularJS configured to work together at their best
 - And more… have a try!
 
-## Installation
+# Installation
 ```
 git clone https://github.com/Zemke/starter-laravel-angular.git
 ```
@@ -45,7 +44,7 @@ php -S localhost:8080 -t public/
 ```
 Edit `.env.example` according to your environment and save as `.env`.
 
-## Requirements
+# Requirements
 
 - PHP >= 5.4
 - Composer
