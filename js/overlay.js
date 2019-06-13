@@ -10,9 +10,6 @@ function openOverlay(elem) {
     const overlayElem = document.getElementById(elem.id + '-overlay');
     document.body.classList.toggle('noscroll', true);
     overlayElem.classList.toggle('on', true);
-    setTimeout(function () {
-        return overlayElem.scrollTop = 0;
-    }, 1000);
 
     const lazyImages = overlayElem.querySelectorAll('img.lazy').forEach(function (lazyImage) {
         lazyImage.src = lazyImage.dataset.src;
