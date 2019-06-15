@@ -570,15 +570,6 @@ footer {
         height: auto;
         margin: 1rem auto;
         display: block;
-
-        &.lazy {
-            opacity: .1;
-        }
-
-        &:not(.lazy) {
-            opacity: 1;
-            transition: opacity 500ms;
-        }
       }
     }
   }
