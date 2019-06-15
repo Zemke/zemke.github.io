@@ -31,12 +31,12 @@
   Below is an illustration of how the website has evolved through the years visually. From old to new.
   The first one being the website before I took over the last a peek at the currently under development rewrite.
 </p>
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/cwt-history/2009.png" alt="CWT 2009" title="CWT 2009">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/cwt-history/2010.png" alt="CWT 2010" title="CWT 2010">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/cwt-history/2011.png" alt="CWT 2011" title="CWT 2011">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/cwt-history/2012.png" alt="CWT 2012" title="CWT 2012">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/cwt-history/2015.png" alt="CWT 2015" title="CWT 2015">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/cwt-history/2019.png" alt="CWT 2019" title="CWT 2019">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/cwt-history/2009.png" alt="CWT 2009" title="CWT 2009">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/cwt-history/2010.png" alt="CWT 2010" title="CWT 2010">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/cwt-history/2011.png" alt="CWT 2011" title="CWT 2011">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/cwt-history/2012.png" alt="CWT 2012" title="CWT 2012">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/cwt-history/2015.png" alt="CWT 2015" title="CWT 2015">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/cwt-history/2019.png" alt="CWT 2019" title="CWT 2019">
 '
 - label: "Instant Smart Quotes"
   id: "ism"
@@ -44,7 +44,7 @@
 <p>I have an above-average interest in typography. I like it to be correct. Therefore I wrote Chrome and Firefox plugins to take care.</p>
 <p>Also I am happy it has assisted a few hundreds of unknown people, too.</p>
 
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/ism.gif" alt="Instant Smart Quotes at work" title="Instant Smart Quotes at work">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/ism.gif" alt="Instant Smart Quotes at work" title="Instant Smart Quotes at work">
 
 <p class="references">
   <a target="_blank" href="https://chrome.google.com/webstore/detail/instant-smart-quotes/dddflkfjemblhfmjdlmmilapbkdaabcj">Chrome</a>
@@ -76,10 +76,10 @@
 <p>
   It’s almost a Progressive Web App, too. Pics:
 </p>
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/tippspiel/bets.png" alt="Tippspiel bets" title="Tippspiel bets">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/tippspiel/portrait.png" alt="Tippspiel protrait" title="Tippspiel protrait">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/tippspiel/landscape.png" alt="Tippspiel landscape" title="Tippspiel landscape">
-<img class="lazy" src="/images/cwt.png" data-src="/images/works/tippspiel/admin.png" alt="Tippspiel admin" title="Tippspiel admin">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/tippspiel/bets.png" alt="Tippspiel bets" title="Tippspiel bets">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/tippspiel/portrait.png" alt="Tippspiel protrait" title="Tippspiel protrait">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/tippspiel/landscape.png" alt="Tippspiel landscape" title="Tippspiel landscape">
+<img class="lazy" src="/images/hero.jpg" data-src="/images/works/tippspiel/admin.png" alt="Tippspiel admin" title="Tippspiel admin">
 '
 - label: "Zemke.IO"
   id: "zemkeio"
