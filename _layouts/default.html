@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#FAFAFA">
     <meta itemprop="description" name="description" content="{% if page.summary %}{{ page.summary | truncate: 160  }}{% elsif page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
     <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link href="/assets/css/fa/css/fontawesome.min.css" rel="stylesheet">
     <link href="/assets/css/fa/css/solid.min.css" rel="stylesheet">
@@ -38,6 +39,7 @@
 {% include navigation.html %}
 <main>{{content}}</main>
 {% include footer.html %}
+<script src="/js/sw-register.js"></script>
 <script src="/js/nav.js"></script>
 <script src="/js/overlay.js"></script>
 </body>
