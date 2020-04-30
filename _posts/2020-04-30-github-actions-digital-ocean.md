@@ -30,6 +30,7 @@ The GitHub Actions I have used for this are
 
 # Configuration
 
+{% raw %}
 ```yaml
 name: release
 on:
@@ -80,6 +81,7 @@ jobs:
           strip_components: 2
           target: "/var/github-release"
 ```
+{% endraw %}
 
 ## SSH secrets
 
