@@ -715,7 +715,7 @@ footer {
     height: auto;
   }
 
-  & ul {
+  & ul, ol {
     padding: 1rem 3rem;
 
     @media screen and (min-width: $breakpoint768) {
@@ -723,10 +723,14 @@ footer {
     }
 
     & > li {
-      list-style: square outside;
+      list-style-position: outside;
       font-family: $blog-font;
       padding: .1rem 0;
     }
+  }
+
+  & ul > li {
+      list-style-type: square;
   }
 }
 
