@@ -103,6 +103,7 @@
       document.addEventListener('keydown', e => e.key === 'Escape' && overlayDiv.remove());
       overlayDiv.appendChild(textDiv);
       textDiv.innerHTML = markyMarkdown(res.object.text, {highlightSyntax: false});
+      textDiv.querySelectorAll('a > svg.octicon.octicon-link').forEach(elem => elem.remove());
       textDiv.prepend(closeButtonElement);
       return overlayDiv;
     }

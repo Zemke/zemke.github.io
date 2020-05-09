@@ -502,6 +502,7 @@ footer {
     width: 100vw;
     z-index: -1;
     opacity: 0;
+    font-size: 2rem;
 
     &.on {
       transition: opacity 500ms ease-out;
@@ -541,14 +542,33 @@ footer {
         letter-spacing: inherit;
       }
 
-      & > p {
+      & > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
+        padding-top: 2rem;
         padding-bottom: 1rem;
-        font-size: 2rem;
       }
 
-      & > p.references {
-        font-size: 2rem;
-        text-align: center;
+      & > p {
+        padding-bottom: 1rem;
+      }
+
+      & code {
+        background-color: #575757;
+        border-radius: .2rem;
+        padding: 1px 2px;
+        margin: 1px;
+        font-size: calc(2rem - 4px);
+      }
+
+      & > pre {
+        background-color: #575757;
+        border-radius: .5rem;
+        padding: .5rem;
+        margin: .5rem 0;
+      }
+
+      & li {
+        list-style: outside square;
+        margin-left: 4rem;
       }
 
       & > i.fa-times {
@@ -564,6 +584,7 @@ footer {
         border-top-right-radius: 1rem;
         color: $snow;
         cursor: pointer;
+        font-size: 3.5rem;
       }
 
       & > h3 {
