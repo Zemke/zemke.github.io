@@ -535,6 +535,12 @@ footer {
         margin: 8rem 70rem;
       }
 
+      & > h1 {
+        font-variant: none;
+        text-align: left;
+        letter-spacing: inherit;
+      }
+
       & > p {
         padding-bottom: 1rem;
         font-size: 2rem;

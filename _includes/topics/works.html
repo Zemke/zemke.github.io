@@ -98,9 +98,9 @@
       const closeButtonElement = document.createElement('i');
       closeButtonElement.classList.add('fa', 'fa-5x', 'fa-times');
       closeButtonElement.addEventListener('click', () => overlayDiv.remove());
-      textDiv.appendChild(closeButtonElement);
       overlayDiv.appendChild(textDiv);
-      textDiv.append(res.object.text); // todo markdown to html
+      textDiv.innerHTML = markyMarkdown(res.object.text, {highlightSyntax: false});
+      textDiv.prepend(closeButtonElement);
       return overlayDiv;
     }
 
