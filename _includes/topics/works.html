@@ -72,7 +72,7 @@
     const fallbackImages = ['/images/opensource.jpg', '/images/job.png'];
     let lastFallbackImageIdx = 1;
 
-    const elements = response.map(res => {
+    function createWorkElement(res) {
       const div = document.createElement('div');
       let img;
       if (imgAssoc[res.id]) {
@@ -88,6 +88,26 @@
       h3.innerText = nameAssoc[res.name] || res.name;
       div.appendChild(h3);
       return div;
+    }
+
+    function createWorkOverlay(res) {
+      const overlayDiv = document.createElement('div');
+      overlayDiv.classList.add('work-description', 'on');
+      const textDiv = document.createElement('div');
+      textDiv.classList.add('text');
+      const closeButtonElement = document.createElement('i');
+      closeButtonElement.classList.add('fa', 'fa-5x', 'fa-times');
+      closeButtonElement.addEventListener('click', () => overlayDiv.remove());
+      textDiv.appendChild(closeButtonElement);
+      overlayDiv.appendChild(textDiv);
+      textDiv.append(res.object.text); // todo markdown to html
+      return overlayDiv;
+    }
+
+    const elements = response.map(res => {
+      const workDiv = createWorkElement(res);
+      workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res)));
+      return workDiv;
     });
 
     document.getElementById('worksContainer').append(...elements);
