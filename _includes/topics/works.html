@@ -98,6 +98,9 @@
       const closeButtonElement = document.createElement('i');
       closeButtonElement.classList.add('fa', 'fa-5x', 'fa-times');
       closeButtonElement.addEventListener('click', () => overlayDiv.remove());
+      document.addEventListener('click', e =>
+        e.target.classList.contains('work-description') && e.target.classList.contains('on') && overlayDiv.remove());
+      document.addEventListener('keydown', e => e.key === 'Escape' && overlayDiv.remove());
       overlayDiv.appendChild(textDiv);
       textDiv.innerHTML = markyMarkdown(res.object.text, {highlightSyntax: false});
       textDiv.prepend(closeButtonElement);
