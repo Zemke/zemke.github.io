@@ -1,22 +1,8 @@
-
-- title: "Enterprise"
-  fa: "building"
-  content: "I can support a team in the development and maintenance of an Enterprise-class software architecture.<br>
-May it be frontend or backend, I’m used to work in a full-stack manner as well as focus on encapsulated parts of
-the system in an agile software development environment."
-
-- title: "Custom"
-  fa: "store"
-  content: "Full-stack is my objective as I like to create the wholeness of a product but I know projects are big and diverse.<br>
-I would eagerly take on custom software projects for business or personal demands."
-
-- title: "Tools"
-  fa: "wrench"
-  content: "My proficiency lies in the likes of Java, Kotlin, React, Angular 2+, Ember,
-Spring, Hibernate and so on. IntelliJ IDEA is my Swiss Army Knife.<br>
-PostgreSQL, Oracle and MySQL are among the databases I have worked with."
-
-- title: "Open Source"
-  fa: "keyboard"
-  content: "As an avid contributor and maintainer of Open Source projects you can also have an in-depth
-look at what I do on <a target=\"_blank\" href=\"https://github.com/zemke\">GitHub</a>."
+- fa: "building"
+  content: "GraphQL, REST, Firebase"
+- fa: "keyboard"
+  content: "Postgres, Firestore"
+- fa: "store"
+  content: "React, Angular, Ember"
+- fa: "wrench"
+  content: "Node.js, Spring, Hibernate"
