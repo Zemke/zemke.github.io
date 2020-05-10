@@ -1,12 +1,16 @@
 window.addEventListener('load', async () => {
   const query = `{
   lastPushedRepos: viewer {
-    repositories(first: 30, orderBy: {direction: DESC, field: PUSHED_AT}) {
+    repositories(affiliations: OWNER, first: 30, orderBy: {direction: DESC, field: PUSHED_AT}) {
       totalCount
       edges {
         node {
+          owner {
+            id
+          }
           name
-          languages(first: 3) {
+          url
+          languages(first: 4, orderBy: {field: SIZE, direction: DESC}) {
             edges {
               node {
                 id
@@ -15,7 +19,6 @@ window.addEventListener('load', async () => {
               }
               size
             }
-            totalSize
           }
         }
       }
@@ -31,7 +34,7 @@ window.addEventListener('load', async () => {
           primaryLanguage {
             name
           }
-          languages(first: 3) {
+          languages(first: 3, orderBy: {field: SIZE, direction: DESC}) {
             edges {
               size
               node {
@@ -67,13 +70,11 @@ window.addEventListener('load', async () => {
     response = JSON.parse(window.localStorage.getItem('github-api'));
   }
   createWorkSection(response.pinnedRepos.pinnedItems.nodes);
-  createSpecsSection(
-    response.lastPushedRepos.repositories.edges,
-    response.lastPushedRepos.repositories.totalCount);
+  createSpecsSection(response.lastPushedRepos.repositories.edges);
 });
 
-function createSpecsSection(repos, totalSize) {
-  const res = repos
+function createSpecsSection(repos) {
+  const data = repos
     .flatMap(repo => repo.node.languages.edges)
     .reduce((acc, curr) => {
       const existing = acc.find(elem => elem.node.id === curr.node.id);
@@ -84,12 +85,39 @@ function createSpecsSection(repos, totalSize) {
       }
       return acc;
     }, [])
-    // .filter(elem => elem.size > 8000)
-    .sort((a, b) => b.size - a.size);
-  console.log(
-    'res',
-    res
-      .map(elem => ({[elem.node.name]: elem.size})));
+    .filter(({size}) => size >= 8000)
+    .sort((a, b) => b.size - a.size)
+    .map(elem => ({
+      language: elem.node,
+      size: elem.size,
+      repos: repos
+        .filter(repo => !!repo.node.languages.edges
+          .find(lang => lang.node.id === elem.node.id))
+        .map(({node}) => ({name: node.name, url: node.url}))
+    }), []);
+  document.getElementById('specsContainer').append(...data
+    .map(elem => {
+      const div = document.createElement('div');
+      const h3 = document.createElement('h3');
+      h3.textContent = elem.language.name;
+      div.appendChild(h3);
+      const repoLinkElements = elem.repos.flatMap((repo, idx, arr) => {
+        const a = document.createElement('a');
+        a.href = repo.url;
+        a.target = '_blank';
+        a.textContent = repo.name;
+        if (idx + 1 !== arr.length) {
+          return [a, document.createTextNode(', ')]
+        }
+        return a;
+      });
+      const repoLinkContainer = document.createElement('div');
+      repoLinkContainer.classList.add('linkContainer');
+      repoLinkContainer.append(...repoLinkElements);
+      div.appendChild(repoLinkContainer);
+      div.style.borderLeftColor = elem.language.color;
+      return div;
+    }));
 }
 
 function createWorkSection(pinnedRepos) {
