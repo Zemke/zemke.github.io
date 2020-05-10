@@ -7,11 +7,32 @@
 
 <script>
   window.addEventListener('load', async e => {
-    const query = `query {
-  viewer {
+    const query = `{
+  tenLastPushedRepos: viewer {
+    repositories(first: 10, orderBy: {direction: DESC, field: PUSHED_AT}) {
+      totalCount
+      edges {
+        node {
+          name
+          languages(first: 3) {
+            edges {
+              node {
+                id
+                color
+                name
+              }
+              size
+            }
+            totalSize
+          }
+        }
+      }
+    }
+  }
+  pinnedRepos: viewer {
     pinnedItems(first: 6, types: REPOSITORY) {
       nodes {
-      ... on Repository {
+        ... on Repository {
           id
           name
           description
@@ -30,7 +51,7 @@
             totalCount
           }
           object(expression: "master:README.md") {
-          ... on Blob {
+            ... on Blob {
               text
             }
           }
@@ -47,7 +68,7 @@
         method: 'POST',
         body: JSON.stringify({query}),
         headers: [['Content-Type', 'application/json']]
-      }).then(res => res.json())).data.viewer.pinnedItems.nodes;
+      }).then(res => res.json())).data;
       window.localStorage.setItem('github-api', JSON.stringify(response));
     } catch (e) {
       console.warn('github response is not current, falling back to local storage');
@@ -108,7 +129,7 @@
       return overlayDiv;
     }
 
-    const elements = response.map(res => {
+    const elements = response.pinnedRepos.pinnedItems.nodes.map(res => {
       const workDiv = createWorkElement(res);
       workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res)));
       return workDiv;
