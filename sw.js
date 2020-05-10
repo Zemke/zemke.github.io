@@ -13,7 +13,7 @@ const urlsToCache = [
 
   "/js/sw-register.js",
   "/js/nav.js",
-  "/js/overlay.js",
+  "/js/github-api.js",
 
   "/manifest.json",
 
