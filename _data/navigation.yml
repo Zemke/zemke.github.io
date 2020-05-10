@@ -1,5 +1,7 @@
 - name: Works
   link: "/#works"
+- name: Specs
+  link: "/#specs"
 - name: Services
   link: "/#services"
 - name: Blog
