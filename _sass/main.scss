@@ -198,6 +198,10 @@ body.heroic:before {
   & .nav-item:nth-child(4) {
     transition-delay: 400ms;
   }
+
+  & .nav-item:nth-child(5) {
+    transition-delay: 480ms;
+  }
 }
 
 @mixin nav-item-color {

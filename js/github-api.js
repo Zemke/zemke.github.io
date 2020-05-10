@@ -57,18 +57,19 @@ window.addEventListener('load', async () => {
 }
 `;
 
-  let response;
-  try {
-    response = (await fetch("http://localhost:8080/github-api", {
-      method: 'POST',
-      body: JSON.stringify({query}),
-      headers: [['Content-Type', 'application/json']]
-    }).then(res => res.json())).data;
-    window.localStorage.setItem('github-api', JSON.stringify(response));
-  } catch (e) {
-    console.warn('github response is not current, falling back to local storage');
-    response = JSON.parse(window.localStorage.getItem('github-api'));
-  }
+  // let response;
+  // try {
+  //   response = (await fetch("http://localhost:8080/github-api", {
+  //     method: 'POST',
+  //     body: JSON.stringify({query}),
+  //     headers: [['Content-Type', 'application/json']]
+  //   }).then(res => res.json())).data;
+  //   window.localStorage.setItem('github-api', JSON.stringify(response));
+  // } catch (e) {
+  //   console.warn('github response is not current, falling back to local storage');
+  //   response = JSON.parse(window.localStorage.getItem('github-api'));
+  // }
+  const response = JSON.parse(window.localStorage.getItem('github-api'));
   createWorkSection(response.pinnedRepos.pinnedItems.nodes);
   createSpecsSection(response.lastPushedRepos.repositories.edges);
 });
