@@ -1,7 +1,7 @@
-window.addEventListener('load', async e => {
+window.addEventListener('load', async () => {
   const query = `{
-  tenLastPushedRepos: viewer {
-    repositories(first: 10, orderBy: {direction: DESC, field: PUSHED_AT}) {
+  lastPushedRepos: viewer {
+    repositories(first: 30, orderBy: {direction: DESC, field: PUSHED_AT}) {
       totalCount
       edges {
         node {
@@ -66,7 +66,33 @@ window.addEventListener('load', async e => {
     console.warn('github response is not current, falling back to local storage');
     response = JSON.parse(window.localStorage.getItem('github-api'));
   }
+  createWorkSection(response.pinnedRepos.pinnedItems.nodes);
+  createSpecsSection(
+    response.lastPushedRepos.repositories.edges,
+    response.lastPushedRepos.repositories.totalCount);
+});
 
+function createSpecsSection(repos, totalSize) {
+  const res = repos
+    .flatMap(repo => repo.node.languages.edges)
+    .reduce((acc, curr) => {
+      const existing = acc.find(elem => elem.node.id === curr.node.id);
+      if (!!existing) {
+        existing.size += curr.size;
+      } else {
+        acc.push(curr);
+      }
+      return acc;
+    }, [])
+    // .filter(elem => elem.size > 8000)
+    .sort((a, b) => b.size - a.size);
+  console.log(
+    'res',
+    res
+      .map(elem => ({[elem.node.name]: elem.size})));
+}
+
+function createWorkSection(pinnedRepos) {
   const nameAssoc = { // github repo name to localization
     'cwt': 'Crespo’s Worms Tournament',
     'instant-smart-quotes': "Instant Smart Quotes",
@@ -121,11 +147,11 @@ window.addEventListener('load', async e => {
     return overlayDiv;
   }
 
-  const elements = response.pinnedRepos.pinnedItems.nodes.map(res => {
+  const elements = pinnedRepos.map(res => {
     const workDiv = createWorkElement(res);
     workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res)));
     return workDiv;
   });
 
   document.getElementById('worksContainer').append(...elements);
-});
+}
