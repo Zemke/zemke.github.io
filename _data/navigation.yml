@@ -2,9 +2,9 @@
   link: "/#works"
 - name: Specs
   link: "/#specs"
-- name: Services
-  link: "/#services"
+- name: Tech
+  link: "/#tech"
 - name: Blog
   link: "/#blog"
-- name: Contact
-  link: "/#contact"
+- name: Hello
+  link: "/#hello"
