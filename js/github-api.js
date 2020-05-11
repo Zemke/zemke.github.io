@@ -157,7 +157,7 @@ function createWorkSection(pinnedRepos) {
     return div;
   }
 
-  function createWorkOverlay(res) {
+  function createWorkOverlay(text) {
     const overlayDiv = document.createElement('div');
     overlayDiv.classList.add('work-description', 'on');
     const textDiv = document.createElement('div');
@@ -169,7 +169,7 @@ function createWorkSection(pinnedRepos) {
       e.target.classList.contains('work-description') && e.target.classList.contains('on') && overlayDiv.remove());
     document.addEventListener('keydown', e => e.key === 'Escape' && overlayDiv.remove());
     overlayDiv.appendChild(textDiv);
-    textDiv.innerHTML = markyMarkdown(res.object.text, {highlightSyntax: false});
+    textDiv.innerHTML = markyMarkdown(text, {highlightSyntax: false});
     textDiv.querySelectorAll('a > svg.octicon.octicon-link').forEach(elem => elem.remove());
     textDiv.prepend(closeButtonElement);
     return overlayDiv;
@@ -177,7 +177,9 @@ function createWorkSection(pinnedRepos) {
 
   const elements = pinnedRepos.map(res => {
     const workDiv = createWorkElement(res);
-    workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res)));
+    if (res.object && res.object.text) {
+      workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res.object.text)));
+    }
     return workDiv;
   });
 
