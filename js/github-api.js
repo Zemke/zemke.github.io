@@ -31,6 +31,8 @@ window.addEventListener('load', async () => {
           id
           name
           description
+          url
+          homepageUrl
           primaryLanguage {
             name
           }
@@ -157,7 +159,7 @@ function createWorkSection(pinnedRepos) {
     return div;
   }
 
-  function createWorkOverlay(text) {
+  function createWorkOverlay(res) {
     const overlayDiv = document.createElement('div');
     overlayDiv.classList.add('work-description', 'on');
     const textDiv = document.createElement('div');
@@ -169,8 +171,20 @@ function createWorkSection(pinnedRepos) {
       e.target.classList.contains('work-description') && e.target.classList.contains('on') && overlayDiv.remove());
     document.addEventListener('keydown', e => e.key === 'Escape' && overlayDiv.remove());
     overlayDiv.appendChild(textDiv);
-    textDiv.innerHTML = markyMarkdown(text, {highlightSyntax: false});
+    textDiv.innerHTML = markyMarkdown(res.object.text, {highlightSyntax: false});
     textDiv.querySelectorAll('a > svg.octicon.octicon-link').forEach(elem => elem.remove());
+    const shortDescription = document.createElement('div');
+    shortDescription.classList.add('shortDescription');
+    shortDescription.textContent = res.description;
+    const externalLinks = document.createElement('div');
+    externalLinks.classList.add('externalLinks');
+    let linkListHtml = `<a target="_blank" href="${res.url}">View on GitHub</a>`;
+    if (!!res.homepageUrl) {
+      linkListHtml += `&nbsp;&bull;&nbsp;<a target="_blank" href="${res.homepageUrl}">View in Production</a>`
+    }
+    externalLinks.innerHTML = linkListHtml;
+    textDiv.prepend(externalLinks);
+    textDiv.prepend(shortDescription);
     textDiv.prepend(closeButtonElement);
     return overlayDiv;
   }
@@ -178,7 +192,7 @@ function createWorkSection(pinnedRepos) {
   const elements = pinnedRepos.map(res => {
     const workDiv = createWorkElement(res);
     if (res.object && res.object.text) {
-      workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res.object.text)));
+      workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res)));
     }
     return workDiv;
   });

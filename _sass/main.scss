@@ -567,6 +567,18 @@ footer {
       background: $main;
       color: $snow;
 
+      & .shortDescription {
+        font-style: italic;
+        color: #c2bdbd;
+        margin-bottom: 1.5rem;
+      }
+
+      & .externalLinks {
+        border-bottom: 1px solid #c2bdbd;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+      }
+
       @media screen and (min-width: $breakpoint768) {
         margin-left:  5rem;
         margin-right:  5rem;
