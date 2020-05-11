@@ -1,7 +1,7 @@
 - fa: "building"
   content: "GraphQL, REST, Firebase"
 - fa: "keyboard"
-  content: "Postgres, Firestore"
+  content: "Postgres, Firestore, PWA"
 - fa: "store"
   content: "React, Angular, Ember"
 - fa: "wrench"
