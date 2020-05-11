@@ -159,6 +159,11 @@ function createWorkSection(pinnedRepos) {
     return div;
   }
 
+  function closeWorkOverlay(overlayDiv) {
+    overlayDiv.remove();
+    window.history.pushState(null, null, "/");
+  }
+
   function createWorkOverlay(res) {
     const overlayDiv = document.createElement('div');
     overlayDiv.classList.add('work-description', 'on');
@@ -166,10 +171,10 @@ function createWorkSection(pinnedRepos) {
     textDiv.classList.add('text');
     const closeButtonElement = document.createElement('i');
     closeButtonElement.classList.add('fa', 'fa-5x', 'fa-times');
-    closeButtonElement.addEventListener('click', () => overlayDiv.remove());
+    closeButtonElement.addEventListener('click', () => closeWorkOverlay(overlayDiv));
     document.addEventListener('click', e =>
-      e.target.classList.contains('work-description') && e.target.classList.contains('on') && overlayDiv.remove());
-    document.addEventListener('keydown', e => e.key === 'Escape' && overlayDiv.remove());
+      e.target.classList.contains('work-description') && e.target.classList.contains('on') && closeWorkOverlay(overlayDiv));
+    document.addEventListener('keydown', e => e.key === 'Escape' && closeWorkOverlay(overlayDiv));
     overlayDiv.appendChild(textDiv);
     textDiv.innerHTML = markyMarkdown(res.object.text, {highlightSyntax: false});
     textDiv.querySelectorAll('a > svg.octicon.octicon-link').forEach(elem => elem.remove());
@@ -192,10 +197,19 @@ function createWorkSection(pinnedRepos) {
   const elements = pinnedRepos.map(res => {
     const workDiv = createWorkElement(res);
     if (res.object && res.object.text) {
-      workDiv.addEventListener('click', () => workDiv.after(createWorkOverlay(res)));
+      workDiv.addEventListener('click', () => {
+        window.history.pushState(null, null, `?work=${res.name}#works`);
+        workDiv.after(createWorkOverlay(res))
+      });
     }
     return workDiv;
   });
 
   document.getElementById('worksContainer').append(...elements);
+
+  const searchedWorkOverlay = new URLSearchParams(window.location.search).get('work');
+  if (new URLSearchParams(window.location.search).get('work')) {
+    document.getElementById('worksContainer').append(
+      createWorkOverlay(pinnedRepos.find(res => res.name === searchedWorkOverlay)));
+  }
 }
