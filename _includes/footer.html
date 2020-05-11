@@ -1,6 +1,13 @@
 <footer>
     <div class="container">
-        © 2019 Florian Zemke<br>
+        <script>
+            window.addEventListener('load', () =>
+                document
+                    .getElementById('copyrightCurrentYear')
+                    .textContent = new Date().getFullYear().toString());
+        </script>
+
+        © 2019–<span id="copyrightCurrentYear"></span> Florian Zemke<br>
         <small>All Rights Reserved.</small><br>
         <a href="/legal">Legal Notice</a> • <a href="/privacy">Privacy Policy</a>
     </div>
