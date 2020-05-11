@@ -2,12 +2,8 @@ window.addEventListener('load', async () => {
   const query = `{
   lastPushedRepos: viewer {
     repositories(affiliations: OWNER, first: 30, orderBy: {direction: DESC, field: PUSHED_AT}) {
-      totalCount
       edges {
         node {
-          owner {
-            id
-          }
           name
           url
           languages(first: 4, orderBy: {field: SIZE, direction: DESC}) {
@@ -33,20 +29,6 @@ window.addEventListener('load', async () => {
           description
           url
           homepageUrl
-          primaryLanguage {
-            name
-          }
-          languages(first: 3, orderBy: {field: SIZE, direction: DESC}) {
-            edges {
-              size
-              node {
-                id
-                name
-              }
-            }
-            totalSize
-            totalCount
-          }
           object(expression: "master:README.md") {
             ... on Blob {
               text
