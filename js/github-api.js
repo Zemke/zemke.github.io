@@ -120,6 +120,7 @@ function createWorkSection(pinnedRepos) {
     'MDEwOlJlcG9zaXRvcnk3ODU0OTQw': '/images/cwt.png',
     'MDEwOlJlcG9zaXRvcnk2NDE2NjQ5Mw==': "/images/ism.jpg",
     'MDEwOlJlcG9zaXRvcnkxMTY0OTA5NjA=': "/images/tippspiel.png",
+    'MDEwOlJlcG9zaXRvcnkyMzA1MzY5MzI=': "/images/just.png",
   };
 
   const fallbackImages = ['/images/opensource.jpg', '/images/job.png'];
