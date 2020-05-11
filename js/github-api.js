@@ -130,6 +130,8 @@ function createWorkSection(pinnedRepos) {
     'just': "Just",
     'starter-laravel-angular': 'Starter Laravel Angular',
     'starter-node-angular': "Starter Node Angular",
+    'waaas': "WAaaS",
+    'zemke.github.io': "Zemke.IO",
   };
 
   const imgAssoc = { // github repo id to background image
