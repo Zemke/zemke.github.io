@@ -556,19 +556,30 @@ footer {
     }
 
     & > .text {
-      margin: 4rem 3rem;
-      //width: calc(900px - 9rem);
-      padding: 1rem;
+      $fontSize: 1.5rem;
+      $lineHeightOffset: .7;
+      font-size: $fontSize;
+      line-height: #{$fontSize + $lineHeightOffset};
+      position: relative;
+      margin: 5rem 1rem;
+      padding: 4rem 1rem;
       border-radius: 1rem;
       background: $main;
       color: $snow;
 
       @media screen and (min-width: $breakpoint768) {
-        margin: 5rem 5rem;
+        margin-left:  5rem;
+        margin-right:  5rem;
+        padding-right: 5rem;
+        padding-left: 5rem;
       }
 
       @media screen and (min-width: $breakpoint1024) {
-        margin: 8rem 15rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+        padding-right: 8rem;
+        padding-left: 8rem;
       }
 
       @media screen and (min-width: 1920px) {
@@ -590,8 +601,17 @@ footer {
         padding-bottom: 1rem;
       }
 
+      $textHeadingSizes: (h1: 3, h2: 2.5, h3: 2, h4: 1.8, h5: 1.6, h6: 1.5);
+
+      @each $heading, $size in $textHeadingSizes {
+        #{$heading} {
+          font-size: #{$size}rem;
+          line-height: #{$size + $lineHeightOffset}rem;
+        }
+      }
+
       & > p {
-        padding-bottom: 1rem;
+        padding-top: 1rem;
       }
 
       & code {
@@ -605,8 +625,8 @@ footer {
       & > pre {
         background-color: #575757;
         border-radius: .5rem;
-        padding: .5rem;
-        margin: .5rem 0;
+        padding: 1rem;
+        margin: 1rem 0;
       }
 
       & li {
@@ -615,10 +635,9 @@ footer {
       }
 
       & > i.fa-times {
-        float: right;
-        position: relative;
-        top: -1rem;
-        right: -1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
         background-color: $accent;
         height: 3.5rem;
         width: 4rem;
@@ -628,11 +647,6 @@ footer {
         color: $snow;
         cursor: pointer;
         font-size: 3.5rem;
-      }
-
-      & > h3 {
-        padding-bottom: 2rem;
-        font-size: 3rem;
       }
 
       & img {
