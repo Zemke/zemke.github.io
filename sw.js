@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zemke-io-v8';
+const CACHE_NAME = 'zemke-io-v9';
 const urlsToCache = [
   '/',
   "/assets/css/styles.css",
@@ -14,6 +14,7 @@ const urlsToCache = [
   "/js/sw-register.js",
   "/js/nav.js",
   "/js/github-api.js",
+  "/js/scrollimate.js",
 
   "/manifest.json",
 
@@ -22,18 +23,7 @@ const urlsToCache = [
   "/images/tippspiel.png",
   "/images/opensource.jpg",
   "/images/job.png",
-
-  "/images/works/cwt-history/2009.png",
-  "/images/works/cwt-history/2010.png",
-  "/images/works/cwt-history/2011.png",
-  "/images/works/cwt-history/2012.png",
-  "/images/works/cwt-history/2015.png",
-  "/images/works/cwt-history/2019.png",
-  "/images/works/ism.gif",
-  "/images/works/tippspiel/bets.png",
-  "/images/works/tippspiel/landscape.png",
-  "/images/works/tippspiel/admin.png",
-  "/images/works/tippspiel/portrait.png",
+  "/images/just.png",
 
   // '/images/icons/apple-touch-icon.png',
   // '/images/icons/apple-touch-icon-57x57.png',
