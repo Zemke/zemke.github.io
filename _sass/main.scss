@@ -231,6 +231,10 @@ nav.navbar {
     top: 0;
     width: 100%;
 
+    & .nav-items {
+      @include nav-is-active;
+    }
+
     & + main {
       padding-top: 6rem;
     }
