@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zemke-io-v9';
+const CACHE_NAME = 'zemke-io-v10';
 const urlsToCache = [
   '/',
   "/assets/css/styles.css",
