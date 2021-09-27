@@ -222,9 +222,9 @@ Output:
 
 ## Learn more
 
-https://www.mathsisfun.com/binary-number-system.html
-https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting
-https://www.itgeared.com/articles/1347-cidr-and-subnetting-tutorial/
-https://www.geeksforgeeks.org/introduction-to-subnetting/
-https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/
+[https://www.mathsisfun.com/binary-number-system.html](https://www.mathsisfun.com/binary-number-system.html) \
+[https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting](https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting) \
+[https://www.itgeared.com/articles/1347-cidr-and-subnetting-tutorial/](https://www.itgeared.com/articles/1347-cidr-and-subnetting-tutorial/) \
+[https://www.geeksforgeeks.org/introduction-to-subnetting/](https://www.geeksforgeeks.org/introduction-to-subnetting/) \
+[https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/](https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/)
 
