@@ -137,8 +137,8 @@ return true;
 There's CIDR notation with IP ending with slash and a number
 representing the number of leading bits reserved for the network.
 
-I.e. 192.168.0.0/24 would reserve the first 24 bits like a subnet
-mask of 255.255.255.0 which is 11111111.11111111.11111111.00000000 in binary.
+I.e. `192.168.0.0/24` would reserve the first 24 bits like a subnet
+mask of `255.255.255.0` which is `11111111.11111111.11111111.00000000` in binary.
 
 ```cs
 private static uint[][] CidrToSubnetMask(uint cidr)
