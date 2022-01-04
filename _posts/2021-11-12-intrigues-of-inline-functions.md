@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Intrigures of Inline Functions
+title:      Intrigues of Inline Functions
 summary:    Stack trace line mismatch and non-determistic calls.
 categories: kotlin
 ---
