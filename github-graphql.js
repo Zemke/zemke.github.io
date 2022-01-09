@@ -1,6 +1,8 @@
-const query = `{
+const https = require('https');
+
+let query = `{
   lastPushedRepos: viewer {
-    repositories(affiliations: OWNER, first: 30, orderBy: {direction: DESC, field: PUSHED_AT}) {
+    repositories(first: 100, orderBy: {direction: DESC, field: PUSHED_AT}, privacy: PUBLIC) {
       edges {
         node {
           name
@@ -18,40 +20,59 @@ const query = `{
         }
       }
     }
-  }
-  pinnedRepos: viewer {
-    pinnedItems(first: 6, types: REPOSITORY) {
-      nodes {
-        ... on Repository {
-          id
-          name
-          description
-          url
-          homepageUrl
-          object(expression: "master:README.md") {
-            ... on Blob {
-              text
-            }
-          }
-        }
-      }
-    }
-  }
-}
+  },
 `;
 
-(async () => {
-  let response;
-  try {
-    response = (await fetch("http://localhost:8080/github-api", {
-      method: 'POST',
-      body: JSON.stringify({query}),
-      headers: [['Content-Type', 'application/json']]
-    }).then(res => res.json())).data;
-    window.localStorage.setItem('github-api', JSON.stringify(response));
-  } catch (e) {
-    console.warn('github response is not current, falling back to local storage');
-    response = JSON.parse(window.localStorage.getItem('github-api'));
-  }
+const PIN = ["cwt", "waaas", "waai", "ml", "just", "tippspiel2", "instant-smart-quotes", "starter-laravel-angular",]
 
-})();
+for (let i = 0; i < PIN.length; i++) {
+  query += `
+  pinnedRepos${i}: viewer {
+    repository(name: "${PIN[i]}") {
+      id name description url homepageUrl
+      object(expression: "HEAD:README.md") { ... on Blob { text } }
+    }
+  },
+`
+}
+
+query += "}";
+
+const data = new TextEncoder().encode(JSON.stringify({query}))
+
+const options = {
+  hostname: 'api.github.com',
+  path: '/graphql',
+  port: 443,
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': data.length,
+    'user-agent': 'node',
+    'Authorization': "bearer " + process.env.GITHUB_TOKEN,
+  }
+}
+
+const req = https.request(options, res => {
+  let buffer = '';
+  res.on('data', d => {
+    buffer += d;
+  })
+  res.on('end', () => {
+    const response = JSON.parse(buffer);
+    let fin = JSON.parse(JSON.stringify({lastPushedRepos: response.data.lastPushedRepos}))
+    fin.pinnedRepos = []
+    for (let i = 0; i < PIN.length; i++) {
+      fin.pinnedRepos.push(response.data["pinnedRepos" + i].repository);
+    }
+    console.log(JSON.stringify(fin))
+  });
+})
+
+req.on('error', error => {
+  console.error(error)
+})
+
+req.write(data)
+req.end()
+
