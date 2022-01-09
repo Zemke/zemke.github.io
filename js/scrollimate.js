@@ -5,9 +5,9 @@ function scrollimate(element, elemOffset = 100, delay = 500) {
 window.addEventListener('scroll', () => {
   scrollimate(document.querySelector('nav.navbar .nav-items'), 25, 0);
   scrollimate(document.getElementById('worksContainer'), 120, 200);
-  document.getElementById('specsContainer')
-    .childNodes.forEach(elem => scrollimate(elem));
-  scrollimate(document.getElementById('serviceContainer'), 200, 500);
+  //document.getElementById('specsContainer')
+  //  .childNodes.forEach(elem => scrollimate(elem));
+  scrollimate(document.getElementById('serviceContainer'), 200, 450);
 });
 
 function isInViewport(el, offset) {
