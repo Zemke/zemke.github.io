@@ -316,7 +316,7 @@ nav.navbar {
   }
 
   &#specsContainer > div.inViewport {
-    @for $i from 1 through 10 {
+    @for $i from 1 through 16 {
       &:nth-child(#{$i}) {
         transform: translateY(0rem);
         transition: transform 1000ms #{100*$i}ms;
@@ -514,7 +514,7 @@ footer {
   }
 
   &#worksContainer.inViewport > .work {
-    @for $i from 1 through 6 {
+    @for $i from 1 through 8 {
       &:nth-child(#{$i+1}) {
         opacity: 1;
         transition: opacity 1000ms #{($i+1)*100}ms;
