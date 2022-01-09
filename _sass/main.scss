@@ -537,30 +537,6 @@ footer {
       flex-basis: calc(50% - 5.5rem);
     }
 
-    &#work-cwt {
-      background-image: radial-gradient(rgba($main, .4), rgba($main, .9)), url("/images/cwt.png");
-    }
-
-    &#work-ism {
-      background-image: radial-gradient(rgba($main, .4), rgba($main, .9)), url("/images/ism.jpg");
-    }
-
-    &#work-tippspiel {
-      background-image: radial-gradient(rgba($main, .4), rgba($main, .9)), url("/images/tippspiel.png");
-    }
-
-    &#work-zemkeio {
-      background-image: radial-gradient(rgba($main, .4), rgba($main, .9)), url("/images/hero.jpg");
-    }
-
-    &#work-opensource {
-      background-image: radial-gradient(rgba($main, .4), rgba($main, .9)), url("/images/opensource.jpg");
-    }
-
-    &#work-job {
-      background-image: radial-gradient(rgba($main, .4), rgba($main, .9)), url("/images/job.png");
-    }
-
     & > h3 {
       color: $snow;
       text-align: center;
