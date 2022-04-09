@@ -24,6 +24,7 @@ const urlsToCache = [
   "/images/opensource.jpg",
   "/images/job.png",
   "/images/just.png",
+  "/images/30s_cut.mp4",
 
   // '/images/icons/apple-touch-icon.png',
   // '/images/icons/apple-touch-icon-57x57.png',
