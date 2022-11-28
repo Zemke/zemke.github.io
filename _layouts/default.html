@@ -55,9 +55,12 @@
 {% include footer.html %}
 <script src="/js/sw-register.js"></script>
 <script src="/js/nav.js"></script>
-<script src="/js/github-api.js"></script>
-<script src="/js/scrollimate.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/marky-markdown@12.0.0/dist/marky-markdown.js"></script>
+{% if page.url == '/' %}
+  <script src="/js/github-api.js"></script>
+  <script src="/js/scrollimate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marky-markdown@12.0.0/dist/marky-markdown.js"></script>
+{% endif %}
+
 </body>
 
 </html>
