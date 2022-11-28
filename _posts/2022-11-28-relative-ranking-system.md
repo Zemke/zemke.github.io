@@ -57,6 +57,8 @@ and then output the ranking.
 
 Go is also faster than PHP and a better suit for a standalone CLI application.
 
+[Relative Ranking System is Open Source Software.](https://github.com/zemke/relrank)
+
 # Problem
 
 In the public world one is accustomed to absolute ranking system.
