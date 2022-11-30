@@ -346,9 +346,9 @@ The algorithm produces rather insane numbers. For example a user with $163$
 rounds played total of which are $127$ won could potentially end up with a
 rating of
 
-$$ 18790682468510068.97010341750068103636621585494299294818077987802741 $$
+$$ 18790682468510068.970103417500681036366 $$
 
-depending on the scale that is set for decimals.
+and even more decimal places depending on the scale that is set for decimals.
 
 To make the numbers more pleasing for displaying to the end-user in a ladder
 the numbers can be rescaled using min-max normalization.
