@@ -13,7 +13,7 @@
             <a href="/">Zemke</a>
         </div>
 
-        <div class="nav-items" id="nav-items">
+        <div class="nav-items{% if page.url != '/' %} inViewport{% endif %}" id="nav-items">
 
             <div class="nav-item">
                 <a href="/#works">Works</a>
