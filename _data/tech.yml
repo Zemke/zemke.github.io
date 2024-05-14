@@ -1,8 +1,0 @@
-- fa: "building"
-  content: "Machine Learning, Application Development"
-- fa: "keyboard"
-  content: "PyTorch, TensorFlow, Computer Vision"
-- fa: "store"
-  content: "React, Angular, Ember, Vue, Symfony, Laravel, Spring"
-- fa: "wrench"
-  content: "Go, PHP, JavaScript, TypeScript, Node, Java, Kotlin"
