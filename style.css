@@ -11,8 +11,15 @@ html {
 body {
   margin: 0 auto;
   max-width: 600px;
-  padding: 3rem 2rem 4rem;
+  padding: 3rem 1rem 4rem;
   color: #111;
+}
+
+@media only screen and (min-width: 450px) {
+  body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 h1 {
